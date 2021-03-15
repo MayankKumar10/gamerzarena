@@ -1,0 +1,126 @@
+@import '../../../styles/base/variables';
+
+@import '../../../styles/base/mixins';
+
+.optionContainer {
+    & > a {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: normal;
+
+        display: block;
+
+        margin-top: $space;
+
+        text-align: center;
+
+        @include desktop {
+            width: 100%;
+            margin-bottom: -$space * 3;
+        }
+
+        svg {
+            margin-left: 10px;
+        }
+
+        path {
+            transition: fill .3s ease-in-out;
+        }
+
+        &:hover {
+            path {
+                fill: #23527c;
+            }
+        }
+    }
+}
+
+.optionsWrapper {
+    @include mobile {
+        align-items: center;
+        flex-flow: column;
+    }
+    @include desktop {
+        display: flex;
+
+        margin-top: $space;
+    }
+    @include largeDesktop {
+        margin-top: $space * 3;
+    }
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+    max-width: 305px;
+    padding: 31px 52px;
+
+    transition: border-color .3s ease-in-out;
+
+    border: solid 2px  #edeef5;
+    border: solid 2px var(--themeBgThird);
+    border-radius: 10px;
+    background-color: var(--themeBgPrimary);
+
+    @include mobile {
+        margin: auto;
+    }
+
+    &:not(:last-child) {
+        @include mobile {
+            margin-bottom: $space;
+        }
+        @include desktop {
+            margin-right: $space * 2;
+        }
+    }
+
+    &.optionActive {
+        border-color: $color-blue;
+
+        .optionIcon {
+            background: $color-blue;
+
+            img {
+                filter: grayscale(1) brightness(9999);
+            }
+        }
+    }
+
+    .optionIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 84px;
+        height: 84px;
+        margin-bottom: 20px;
+
+        transition: background-color .3s ease-in-out;
+
+        border-radius: 4px;
+        background: #f7f8fb;
+        background: var(--themeBgSecondary);
+    }
+
+    h2 {
+        margin-bottom: 25px;
+
+        text-align: center;
+
+        color: $color-blue;
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 1.69;
+
+        text-align: center;
+
+        color: $color-darkblue;
+        color: var(--themeColorSecondary);
+    }
+}

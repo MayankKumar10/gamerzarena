@@ -1,0 +1,115 @@
+@import "../../../styles/base/variables";
+
+@import "../../../styles/base/mixins";
+
+.individualWrapper {
+  h2 {
+    margin: 30px 0 17px 0;
+  }
+}
+
+.rulesWrapper {
+  overflow-y: auto;
+
+  max-width: 50wh;
+  max-height: calc(100vh - 250px);
+  margin-bottom: 30px;
+  padding: 25px 42px;
+
+  border: solid 2px $color-blue;
+  border-radius: 10px;
+  background-color: var(--themeBgPrimary);
+
+  h2 {
+    margin-top: 0;
+  }
+
+  ul {
+    line-height: 1.92;
+
+    margin-left: 16px;
+
+    list-style: disc;
+
+    color: $color-darkblue;
+    color: var(--themeColorSecondary);
+  }
+}
+
+.individualForm {
+  @include desktop {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    min-height: calc(100vh - 12rem - 87px);
+  }
+
+  .formLabel {
+    font-size: 13px;
+    line-height: normal;
+
+    margin-bottom: 10px;
+
+    opacity: 1;
+    color: #545566;
+    color: var(--themeColorPrimary);
+  }
+
+  & > div {
+    input,
+    select {
+      width: 340px;
+      margin-bottom: $space;
+
+      border: solid 1px #acadbb;
+      border: solid 1px var(--themeColorPrimary);
+      background-color: var(--themeBgPrimary);
+
+      &:focus {
+        background-color: var(--themeBgPrimary);
+      }
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    margin-top: $space;
+
+    @include desktop {
+      margin-bottom: -$space * 2;
+
+      @-moz-document url-prefix() {
+        margin-bottom: $space * 2;
+      }
+    }
+
+    @include mobile {
+      margin-bottom: $space;
+    }
+  }
+
+  button {
+    min-width: 140px;
+    height: 40px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    border-radius: 5px;
+    box-shadow: 0 15px 32px -14px $color-blue;
+
+    span {
+      font-size: 15px;
+
+      margin-right: 24px;
+      padding-right: 13px;
+
+      opacity: 1;
+      border-right: 2px solid rgba(#fff, 0.3);
+    }
+  }
+}

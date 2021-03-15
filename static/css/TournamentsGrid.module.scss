@@ -1,0 +1,399 @@
+@import "../../../styles/base/variables";
+
+@import "../../../styles/base/mixins";
+
+.container {
+  padding: $space * 2 $space;
+  min-height: 100vh;
+  margin-bottom: 10rem;
+  @include mobile {
+    padding: $space * 2 $space $space * 5 $space;
+  }
+
+  .noDataFound {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .fatchingDataProgress {
+    text-align: center;
+    @include mobile {
+      padding: 35px 0;
+    }
+    span {
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.19px;
+      color: #e0e0e0;
+      span {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+  .solid {
+    // margin-top: -65px;
+    border-top: 1.5px solid #262626;
+    height: 1px;
+  }
+  .pageTitle {
+    // font-size: 40px;
+    // line-height: normal;
+
+    // text-align: center;
+    // letter-spacing: normal;
+
+    font-size: 53px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.76px;
+    text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    color: #0078ff;
+    font-family: "FlexoHeavy" !important;
+
+    @include mobile {
+      font-size: 48px;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $space;
+  gap: 6rem 0rem;
+  @include tablet {
+    gap: 6rem 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6rem 2rem;
+    // padding: 35px;
+  }
+  @include smallScreen {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include largeDesktop {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.card {
+  width: 100%;
+  height: 420px;
+  border-radius: 10px;
+  background-color: #292929;
+  cursor: pointer;
+  //   background-color: var(--themeBgPrimary);
+  // box-shadow: 0 29px 90px -42px rgba(0, 33, 95, 0.4);
+  display: grid;
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    color: #8c8c8c;
+  }
+
+  .img {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 177px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: $color-darkblue;
+    background: var(--themeColorSecondary);
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      // width: 282px;
+      height: 177px;
+      width: 100%;
+      // height: 100%;
+      // object-fit: cover;
+    }
+
+    .imgSkeleton {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tournamentEntry {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 3px 15px;
+      // width: 70px;
+      text-align: center;
+      border-radius: 6px;
+      span {
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.58;
+        letter-spacing: normal;
+      }
+    }
+    .gaPlus {
+      background-color: #0078ff;
+      color: #fff;
+    }
+    .free {
+      background-color: #83d748;
+      color: #fff;
+    }
+    .payable {
+      background-color: #ff7100;
+      color: #fff;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content {
+    padding: 25px;
+    display: grid;
+    .name {
+      height: 90px;
+    }
+    .title {
+      font-size: 21px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+      //color: var(--themeColorPrimary);
+    }
+    .contestType {
+      // color: #0078ff;
+      // margin-bottom: 10px;
+      text-transform: uppercase;
+
+      font-size: 12px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.58;
+      letter-spacing: 0.2px;
+      color: #747474;
+    }
+    .ongoing {
+      // margin-top: 20px;
+      // span {
+      //   height: 19px;
+      //   margin: 0 178px 5px 0;
+      //   font-size: 13px;
+      //   font-weight: 500;
+      //   font-stretch: normal;
+      //   font-style: normal;
+      //   line-height: 1.46;
+      //   letter-spacing: normal;
+      //   color: #ffffff;
+      //   // color: var(--themeColorPrimary);
+      // }
+      .progress {
+        border-radius: 0.5rem;
+        margin-top: 10px;
+        height: 10px;
+        background-color: #000000;
+      }
+    }
+
+    .date {
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-size: 11px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.73;
+        letter-spacing: normal;
+        color: #747474;
+      }
+      span:first-child {
+        color: #ffffff;
+      }
+
+      img {
+        width: 20px;
+      }
+    }
+
+    .platformIcon {
+      display: flex;
+      margin-top: 22px;
+      img {
+        width: 16px;
+        height: 16px;
+        margin: 0 10px 0 0;
+        object-fit: contain;
+        filter: invert(1);
+      }
+    }
+  }
+
+  .footer {
+    background-color: #1e1f20;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 18px;
+
+    display: grid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include desktop {
+      grid-template-columns: 40% 60%;
+    }
+
+    .leftSide {
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 2rem;
+        fill: #8c8c8c;
+        margin-right: 7px;
+      }
+      .userCount {
+        height: 19px;
+        margin: 1px 0 0 5px;
+        font-family: AirbnbCerealApp;
+        font-size: 13px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.46;
+        letter-spacing: 0.8px;
+        color: #ffffff;
+      }
+    }
+    .rightSide {
+      display: flex;
+      align-items: center;
+      .prizeLabel {
+        height: 19px;
+        margin: 9px 5px 8px 0;
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.58;
+        letter-spacing: 0.2px;
+        text-align: right;
+        color: #747474;
+      }
+      .prize {
+        font-size: 28px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.4px;
+        color: #ffffff;
+      }
+    }
+
+    h4 {
+      font-weight: bold;
+      line-height: normal;
+      i {
+        color: #ddd;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 15px;
+    line-height: 1.67;
+
+    text-transform: uppercase;
+
+    color: #acadbb;
+    color: var(--themeColorGray);
+  }
+
+  h5 {
+    font-size: 13px;
+
+    color: $color-blue;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 9px;
+
+    letter-spacing: -0.36px;
+
+    // color: $color-darkblue;
+    // color: var(--themeColorSecondary);
+    // color: var(--themeColorPrimary);
+    color: #fff;
+  }
+
+  .usersIcon {
+    margin-right: 5px;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+
+  button {
+    width: 200px;
+    height: 50px;
+    margin-top: $space * 2;
+
+    box-shadow: none;
+
+    @include desktop {
+      margin-top: 60px;
+    }
+  }
+}
+
+.bannerImg {
+  width: 52vw;
+  height: 49vh;
+}

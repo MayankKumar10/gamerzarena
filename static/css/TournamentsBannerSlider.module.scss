@@ -1,0 +1,250 @@
+@import "../../../styles/base/variables";
+
+@import "../../../styles/base/mixins";
+
+$bg: #34495e;
+$white: #fff;
+$raleway: "Raleway", sans-serif;
+
+.container {
+  .bannerImg {
+    width: 100%;
+    height: 21vw;
+    border-radius: 10px;
+    cursor: pointer;
+     object-fit: cover;
+    @include mobile {
+     height: 50vw;
+    }
+    @include tablet {
+      height: 30vw;
+    }
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(#0000007d));
+  }
+
+  // :global(.slick-arrow) {
+  //   display: none !important;
+  // }
+
+  .overlayText {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    width: 80%;
+
+    @include mobile {
+      bottom: 10px;
+      left: 20px;
+    }
+  }
+
+  .banner {
+    position: relative;
+    padding: 0 10px;
+    &:focus {
+      outline: none !important;
+    }
+  }
+  // .gaPlus {
+  //   width: 58px;
+  //   height: 25px;
+  //   padding: 3px 16px;
+  //   border-radius: 3px;
+  //   background-color: #0078ff;
+
+  //   font-size: 12px;
+  //   font-weight: bold;
+  //   font-stretch: normal;
+  //   font-style: normal;
+  //   line-height: 1.58;
+  //   letter-spacing: normal;
+  //   color: #ffffff;
+  // }
+
+  .tournamentEntry {
+    width: fit-content;
+    height: 25px;
+    padding: 3px 16px;
+    border-radius: 3px;
+
+    span {
+      font-size: 12px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.58;
+      letter-spacing: normal;
+    }
+  }
+  .gaPlus {
+    background-color: #0078ff;
+    color: #fff;
+  }
+  .free {
+    background-color: #83d748;
+    color: #fff;
+  }
+  .payable {
+    background-color: #ff7100;
+    color: #fff;
+  }
+
+  .prizePool {
+    font-size: 40px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.57px;
+    color: #ffffff;
+    // background-color: #000;
+    background-color: rgba(0, 0, 0, 0.65);
+
+    display: inline-block;
+    padding: 0 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    // color: var(--themeColorPrimary);
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  a {
+    display: flex;
+  }
+  .tournamentName {
+    font-size: 26px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.37px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 0 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+
+    @include mobile {
+      font-size: 16px;
+      width: auto;
+    }
+  }
+
+  .bottomPart {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
+
+    .date {
+      display: flex;
+      justify-content: space-between;
+      width: 338px;
+      height: 50px;
+      padding: 15px 26px 17px 25px;
+      border-radius: 5px;
+      // backdrop-filter: blur(2px);
+      background-color: rgba(0, 0, 0, 0.65);
+      @include mobile {
+        height: 22px;
+        width: auto;
+        position: relative;
+        padding: 0 5px;
+        margin: 5px 0;
+      }
+      // @include desktop {
+      //   position: absolute;
+      //   right: -100px;
+      //   bottom: -74px;
+      // }
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.71;
+        letter-spacing: normal;
+        color: #747474;
+      }
+      span:first-child {
+        color: #ffffff;
+      }
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+
+.gamesSlider {
+  position: relative;
+  margin: 0 -$space;
+  color: #fff;
+
+  // display: flex;
+  // justify-content: center;
+  // width: 60vw;
+  // @include mobile {
+  //   width: 85vw;
+  // }
+
+  // div:first-child {
+  //   width: 60vw;
+  //   @include mobile {
+  //     width: 85vw;
+  //   }
+  // }
+
+  & > button {
+    font-size: 0;
+
+    position: absolute;
+    z-index: 9;
+    top: 0;
+
+    width: 125px;
+    height: 100%;
+    padding: 0;
+
+    transition: opacity 0.3s ease-in-out;
+
+    opacity: 1;
+    border: 0 !important;
+    outline: none !important;
+
+    &:first-of-type {
+      background: url(../../../assets/images/icons/landing-arrow-white.svg) center / 20px 26px no-repeat;
+      transform: rotateY(180deg);
+      left: 0;
+      filter: drop-shadow(2px 4px 6px black);
+
+      @include mobile {
+        top: 90px;
+        background: url(../../../assets/images/icons/landing-arrow-white.svg) top / 20px 26px no-repeat;
+        left: -53px;
+      }
+      @include tablet {
+        top: 100px;
+      }
+    }
+
+    &:last-of-type {
+      right: 0;
+      background: url(../../../assets/images/icons/landing-arrow-white.svg) center / 20px 26px no-repeat;
+      filter: drop-shadow(2px 4px 6px black);
+      @include mobile {
+        top: 90px;
+        background: url(../../../assets/images/icons/landing-arrow-white.svg) top / 20px 26px no-repeat;
+        right: -53px;
+      }
+      @include tablet {
+        top: 100px;
+      }
+    }
+  }
+
+  // :global(.slick-track) {
+  //   top: 10px;
+  // }
+}

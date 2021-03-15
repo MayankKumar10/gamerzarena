@@ -1,0 +1,23 @@
+@import "../../../styles/base/variables";
+@import "../../../styles/base/mixins";
+
+.streamModel {
+  ul {
+    list-style: inside !important;
+    color: var(--themeColorPrimary);
+  }
+
+  .streamHeader {
+    color: var(--themeColorPrimary);
+  }
+
+  :global(.modal-content) {
+    background: var(--themeBgPrimary);
+
+    button {
+      span {
+        color: var(--themeColorPrimary);
+      }
+    }
+  }
+}

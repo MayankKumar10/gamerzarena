@@ -1,0 +1,75 @@
+@import "../../styles/base/variables";
+
+@import "../../styles/base/mixins";
+
+.game {
+  position: relative;
+
+  width: 100%;
+
+  transition: background-color 0.3s ease-in-out;
+
+  border-radius: 10px;
+  padding: 10px;
+  height: 130px;
+
+  .img {
+    position: relative;
+
+    // overflow: hidden;
+
+    // padding-top: 40%;
+
+    border-radius: 10px;
+    &:hover {
+      .plaforms {
+        pointer-events: all;
+        opacity: 1;
+      }
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // width: 70px;
+    min-width: 70px;
+    // width: 78px;
+    height: 92px;
+    margin: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 100ms ease-in 50ms;
+  }
+
+  // img:hover {
+  //   // transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  //   border-radius: 5.8px;
+  //   box-shadow: 0 0 11px 4px rgba(0, 120, 255, 0.4);
+  //   border: solid 1.5px #0078ff;
+  // }
+
+  // .selected {
+  //   // transform: scale(1.5);
+  //   border-radius: 5.8px;
+  //   box-shadow: 0 0 11px 4px rgba(0, 120, 255, 0.4);
+  //   border: solid 1.5px #0078ff;
+  // }
+
+  img {
+    border: 2px solid transparent;
+  }
+  img:hover,
+  .selected {
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-property: -webkit-box-shadow;
+    transition-property: -webkit-box-shadow;
+    transition-property: box-shadow;
+    transition-property: box-shadow, -webkit-box-shadow;
+    -webkit-box-shadow: 0 0 11px 4px rgba(0, 120, 255, 0.4);;
+    box-shadow: 0 0 11px 4px rgba(0, 120, 255, 0.4);;
+    border: 2px solid #1f8bff;
+  }
+}

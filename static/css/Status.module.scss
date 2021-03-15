@@ -1,0 +1,75 @@
+@import '../../styles/base/variables';
+
+@import '../../styles/base/mixins';
+
+/*******************************************************************************
+*** STATUS
+*******************************************************************************/
+.status {
+    font-size: 10px;
+    font-style: normal;
+    line-height: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 69px;
+    min-height: 24px;
+    margin-left: $space;
+    padding: 6px;
+
+    letter-spacing: .3px;
+    text-transform: uppercase;
+
+    color: #fff;
+    border-radius: 20.5px;
+
+    &.enabled {
+        background-color: #28cc90;
+    }
+
+    &.disabled {
+        background-color: #dddd;
+    }
+
+    &.bg-blue {
+        background-color: $color-blue;
+    }
+
+    &.finished {
+        background-color: #eb9835;
+    }
+
+    &.cancelled {
+        background-color: #e73737;
+    }
+
+    &.paid {
+        background-color: #6468ab;
+    }
+
+    &.ongoing {
+        background-color: $color-blue;
+    }
+
+    &.starting_soon {
+        background-color: #eb9835;
+    }
+
+    &.open {
+        background-color: #28cc90;
+    }
+
+    &.ended {
+        background-color: #eb9835;
+    }
+
+    &.untracked {
+        background-color: #28cc90;
+    }
+
+    &.tracked {
+        background-color: #28cc90;
+    }
+}
